@@ -26,7 +26,7 @@ const LandingPage = ({setSocket, setUid, setName ,name}:Props) => {
 
     const handleSubmit =()=>{
 
-        let ws:WebSocket= new WebSocket(import.meta.env.VITE_BACKEND_URL!) 
+        let ws:WebSocket= new WebSocket(`${import.meta.env.VITE_BACKEND_URL}?user-agent=CustomWSClient`)
         
         
         setSocket(ws);
