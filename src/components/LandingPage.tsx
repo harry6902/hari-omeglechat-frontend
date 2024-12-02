@@ -26,7 +26,7 @@ const LandingPage = ({setSocket, setUid, setName ,name}:Props) => {
 
     const handleSubmit =()=>{
 
-        let ws:WebSocket= new WebSocket(`${import.meta.env.VITE_BACKEND_URL}?user-agent=CustomWSClient`)
+        let ws:WebSocket=new WebSocket(`${import.meta.env.VITE_BACKEND_URL}?user-agent=CustomWSClient`)
         
         
         setSocket(ws);
@@ -41,7 +41,7 @@ const LandingPage = ({setSocket, setUid, setName ,name}:Props) => {
               id:id
             }
         } 
-        ws.onopen =()=>{
+        ws.onopen =async()=>{
         ws.send(JSON.stringify(data));
         }
         navigate(`/room/${room}`);
