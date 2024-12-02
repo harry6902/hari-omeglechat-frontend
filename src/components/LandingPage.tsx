@@ -26,6 +26,11 @@ const LandingPage = ({setSocket, setUid, setName ,name}:Props) => {
 
     const handleSubmit =()=>{
 
+        if(room==="" || name===""){
+         alert("Room and name are compulsory");
+          return;
+        }
+
         console.log(import.meta.env.VITE_BACKEND_URL)
 
         let ws:WebSocket=new WebSocket(`${import.meta.env.VITE_BACKEND_URL}?user-agent=CustomWSClient`)
