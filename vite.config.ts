@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {
-    BACKEND_URL: JSON.stringify(import.meta.env.VITE_BACKEND_URL),
+   
   },
 })
